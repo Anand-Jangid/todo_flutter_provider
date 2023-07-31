@@ -88,6 +88,9 @@ class _TodoDetailScreenState extends State<TodoDetailScreen> {
 
                             Provider.of<TodoProvider>(context, listen: false)
                                 .addTodo(todo);
+
+                            ScaffoldMessenger.of(context)
+                                .removeCurrentSnackBar();
                             ScaffoldMessenger.of(context).showSnackBar(
                                 const SnackBar(content: Text("TODO ADDED")));
                             Navigator.pop(context);
@@ -106,6 +109,8 @@ class _TodoDetailScreenState extends State<TodoDetailScreen> {
                                     DateTime.timestamp());
                             Provider.of<TodoProvider>(context, listen: false)
                                 .updateTodo(todo);
+                            ScaffoldMessenger.of(context)
+                                .removeCurrentSnackBar();
                             ScaffoldMessenger.of(context).showSnackBar(
                                 const SnackBar(content: Text("TODO UPDATED")));
                             Navigator.pop(context);
