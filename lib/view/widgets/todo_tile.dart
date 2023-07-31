@@ -19,8 +19,15 @@ class TodoTile extends StatelessWidget {
         onDismissed: (direction) {
           Provider.of<TodoProvider>(context, listen: false).deleteTodo(todo);
           ScaffoldMessenger.of(context).removeCurrentSnackBar();
-          ScaffoldMessenger.of(context)
-              .showSnackBar(const SnackBar(content: Text("Todo removed")));
+          ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+            content: const Text("Todo removed"),
+            action: SnackBarAction(
+              label: "UNDO",
+              onPressed: () {
+                Provider.of<TodoProvider>(context, listen: false).addTodo(todo);
+              },
+            ),
+          ));
         },
         child: Card(
           child: ListTile(

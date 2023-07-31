@@ -91,8 +91,9 @@ class _TodoDetailScreenState extends State<TodoDetailScreen> {
 
                             ScaffoldMessenger.of(context)
                                 .removeCurrentSnackBar();
-                            ScaffoldMessenger.of(context).showSnackBar(
-                                const SnackBar(content: Text("TODO ADDED")));
+                            ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                              content: Text("TODO ADDED"),
+                            ));
                             Navigator.pop(context);
                           },
                           child: const Text('Save'),
@@ -111,8 +112,9 @@ class _TodoDetailScreenState extends State<TodoDetailScreen> {
                                 .updateTodo(todo);
                             ScaffoldMessenger.of(context)
                                 .removeCurrentSnackBar();
-                            ScaffoldMessenger.of(context).showSnackBar(
-                                const SnackBar(content: Text("TODO UPDATED")));
+                            ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                              content: Text("TODO UPDATED"),
+                            ));
                             Navigator.pop(context);
                           },
                           child: const Text('Update'),

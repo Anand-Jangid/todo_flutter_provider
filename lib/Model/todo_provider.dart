@@ -60,7 +60,7 @@ class TodoProvider extends ChangeNotifier {
 
   int _indexOfTodo(Todo todo) {
     for (var i = 0; i < _todos.length; i++) {
-      if (todo.timeStamp == _todos[i].timeStamp) return i;
+      if (todo.timeStamp.isAtSameMomentAs(_todos[i].timeStamp)) return i;
     }
     return -1;
   }
