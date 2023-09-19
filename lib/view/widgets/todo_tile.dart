@@ -32,7 +32,7 @@ class TodoTile extends StatelessWidget {
         child: Card(
           child: ListTile(
             leading: const Icon(Icons.task),
-            title: Text(todo.title),
+            title: Text(todo.title, style: TextStyle(decoration: todo.isCompleted ? TextDecoration.lineThrough : null),),
             subtitle: Text(todo.description),
             onTap: () {
               Navigator.of(context).push(MaterialPageRoute(

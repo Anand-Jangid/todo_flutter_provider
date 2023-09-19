@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:todo_flutter_provider/Model/todo.dart';
 
 class TodoProvider extends ChangeNotifier {
-  List<Todo> _todos = [
+  final List<Todo> _todos = [
     Todo(
         title: "Hello",
         description: "world",
@@ -63,5 +63,12 @@ class TodoProvider extends ChangeNotifier {
       if (todo.timeStamp.isAtSameMomentAs(_todos[i].timeStamp)) return i;
     }
     return -1;
+  }
+
+  //get count of todos
+  int getCount() => _todos.length;
+
+  List<Todo> getCompletedTodoList () {
+    return _todos.where((element) => element.isCompleted).toList();
   }
 }
