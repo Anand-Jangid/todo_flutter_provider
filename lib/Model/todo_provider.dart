@@ -2,33 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:todo_flutter_provider/Model/todo.dart';
 
 class TodoProvider extends ChangeNotifier {
-  final List<Todo> _todos = [
-    Todo(
-        title: "Hello",
-        description: "world",
-        isCompleted: true,
-        timeStamp: DateTime.timestamp()),
-    Todo(
-        title: "ANand",
-        description: "Jangid",
-        isCompleted: true,
-        timeStamp: DateTime.timestamp()),
-    Todo(
-        title: "Aman",
-        description: "Kansal",
-        isCompleted: true,
-        timeStamp: DateTime.timestamp()),
-    Todo(
-        title: "Amit",
-        description: "Chauhan",
-        isCompleted: true,
-        timeStamp: DateTime.timestamp()),
-    Todo(
-        title: "Rahul",
-        description: "Singh",
-        isCompleted: true,
-        timeStamp: DateTime.timestamp()),
-  ];
+  final List<Todo> _todos = [];
 
   List<Todo> get todos => _todos;
 
